@@ -1,0 +1,11 @@
+<hr>
+<button class="btn btn-primary" (click)="onStart()"><h4>Start game</h4></button>
+<hr>
+<button class="btn btn-primary" (click)="onStop()"><h4>Stop game</h4></button>
+
+<ul>
+  <li *ngFor="let item of listOfComp; let i = index">
+    <div *ngIf="item   % 2 === 0; else elseBlock"><app-even [value]="item"></app-even></div>
+    <ng-template #elseBlock><app-odd [value]="item"></app-odd></ng-template>
+  </li>
+</ul>
